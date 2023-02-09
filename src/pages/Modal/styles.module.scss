@@ -1,0 +1,332 @@
+@import 'Styles/common/_variables.scss';
+@import 'Styles/responsive.scss';
+
+.is-not-load-container {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: #000000;
+  display: flex;
+  > div {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 50px 170px;
+    margin: auto;
+    background-color: rgba(255, 255, 255, 0.5);
+    box-shadow: 0px 0px 16px rgba(255, 255, 255, 0.5);
+    border-radius: 11px;
+    > div {
+      font-size: 40px;
+      font-weight: 700px;
+      color: $greyscale9;
+      margin-bottom: 20px;
+    }
+    > button {
+      background-color: transparent;
+      padding: 10px 20px 0;
+      color: #444;
+      &:hover {
+        color: #333;
+      }
+    }
+  }
+}
+.modal-wrapper {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  left: 0;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  padding: 0 20px;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+  .close-button {
+    cursor: pointer;
+    position: fixed;
+    left: 10px;
+    top: 10px;
+    z-index: 9999;
+  }
+}
+
+.modal {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  position: absolute;
+  min-width: 324px;
+  min-height: 90vh;
+  background-color: #fff;
+  border-radius: 3px;
+  box-shadow: 0 2px 20px 0 rgba(0, 0, 0, 0.5);
+  white-space: pre-line;
+  padding: 20px 0;
+  width: 90vw;
+  height: 90vh;
+  overflow: auto;
+  @include mobile {
+    padding: 0;
+  }
+
+  .loading-container {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+  }
+}
+.modal-container {
+  padding-bottom: 70px;
+  position: relative;
+  .cover-image-wrapper {
+    max-width: 100%;
+    max-height: 100%;
+    margin: 0 auto;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      max-height: 65vh;
+    }
+    @include tablet {
+      width: 100%;
+      max-width: 80%;
+      max-height: 70%;
+      height: 70%;
+      img {
+        max-height: 70vh;
+      }
+    }
+  }
+  .profile-container {
+    border-bottom: 1px solid $greyscale5;
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    img {
+      cursor: pointer;
+      margin-right: 20px;
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+    }
+    > div {
+      cursor: pointer;
+      color: $greyscale9;
+
+      &:hover {
+        color: $greyscale8;
+      }
+    }
+  }
+  .image-info-container {
+    padding: 30px 20px 20px;
+    border-bottom: 1px solid $greyscale5;
+    &-up {
+      display: flex;
+      padding-bottom: 20px;
+      > div {
+        display: inline-flex;
+        flex-direction: column;
+        margin-right: 20px;
+        width: 15%;
+        min-width: 85px;
+        @include tablet {
+          width: 20%;
+        }
+        .title {
+          font-weight: 400;
+          color: $greyscale8;
+        }
+        .number {
+          color: $greyscale9;
+        }
+      }
+    }
+    &-down {
+      > div {
+        width: 100%;
+        grid-row-gap: 4px;
+        display: grid;
+        > div {
+          display: flex;
+          align-items: center;
+          svg {
+            margin-right: 8px;
+            margin-bottom: 3px;
+          }
+        }
+        .camera-info-wrapper {
+          position: relative;
+          cursor: pointer;
+          .camera-info {
+            position: absolute;
+            bottom: 30px;
+            left: 0;
+            background-color: $greyscale9;
+            padding: 10px;
+
+            span {
+              margin-top: 10px;
+              margin-bottom: 3px;
+              display: inline-block;
+              color: $greyscale5;
+              &:first-of-type {
+                margin-top: 0;
+              }
+            }
+            p {
+              color: $greyscale1;
+              line-height: 20px;
+            }
+          }
+        }
+      }
+      .image-description {
+        margin-top: 20px;
+      }
+      @include tablet {
+        display: flex;
+        .image-description {
+          margin-top: 0;
+        }
+      }
+    }
+  }
+  h1 {
+    margin: 0 10px;
+    padding-bottom: 16px;
+    padding-top: 30px;
+    @include tablet {
+      margin: 0 20px;
+    }
+  }
+  .user-images {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 0 20px;
+    > div {
+      width: calc(50% - 5px);
+      @include tablet {
+        width: calc(50% - 10px);
+      }
+    }
+  }
+  .relate-collection-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 0 20px;
+    margin-bottom: -48px;
+    .collection-container,
+    .empty-item {
+      width: calc(100%);
+      overflow: hidden;
+      margin-bottom: 48px;
+      .image-container {
+        border-radius: 8px;
+        overflow: hidden;
+        height: 65.2778vw;
+        min-height: 235px;
+        max-height: 210px;
+
+        display: flex;
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+        &-left {
+          width: 70%;
+          margin-right: 5px;
+        }
+        &-right {
+          width: 30%;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          img {
+            height: calc(50% - 2.5px);
+          }
+        }
+      }
+      .collection-info-container {
+        .collection {
+          &-title {
+            margin-top: 10px;
+          }
+          &-info {
+            margin-top: 5px;
+          }
+          &-tag {
+            margin-top: 15px;
+          }
+        }
+      }
+    }
+    @include tablet {
+      .collection-container,
+      .empty-item {
+        width: calc(50% - 10px);
+        .image-container {
+          min-height: auto;
+          height: 26.6vw;
+        }
+      }
+    }
+    @include desktop {
+      .collection-container,
+      .empty-item {
+        width: calc(33.33% - 10px);
+        .image-container {
+          height: 18.457vw;
+        }
+      }
+    }
+    .empty-item {
+      margin: 0;
+    }
+  }
+  .tag-container {
+    padding: 0 20px;
+    margin-bottom: -10px;
+  }
+}
+
+.no-modal-wrapper {
+  font-size: 16px;
+  line-height: 30px;
+  padding: 20px 0;
+  margin-top: 50px;
+  padding-bottom: 70px;
+  @include tablet {
+    padding: 0 0 70px;
+  }
+
+  .user-images {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 0 10px;
+    @include tablet {
+      padding: 0 20px;
+    }
+    > div {
+      width: calc(50% - 5px);
+      @include tablet {
+        width: calc(50% - 10px);
+      }
+    }
+  }
+}
