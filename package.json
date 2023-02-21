@@ -33,7 +33,7 @@
   },
   "scripts": {
     "preinstall": "npx npm-force-resolutions",
-    "start": "WHICH_MODE=production react-app-rewired start",
+    "start": "react-scripts --openssl-legacy-provider start",
     "build": "WHICH_MODE=production react-app-rewired build --quiet",
     "test": "react-app-rewired test",
     "eject": "react-app-rewired eject"
