@@ -85,6 +85,7 @@ function Lookpage() {
     }
     query?.search?.length > 0 ? onSearch() : getImage();
   }, [page]);
+
   return (
     <div className={cx('list-container')}>
       <div className={cx('search-input-wrapper')}>
