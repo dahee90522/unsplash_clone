@@ -61,15 +61,16 @@
   left: 50%;
   transform: translate(-50%, -50%);
   position: absolute;
+  width: 90vw;
   min-width: 324px;
+  max-width: 820px;
+  height: 90vh;
   min-height: 90vh;
   background-color: #fff;
   border-radius: 3px;
   box-shadow: 0 2px 20px 0 rgba(0, 0, 0, 0.5);
   white-space: pre-line;
   padding: 20px 0;
-  width: 90vw;
-  height: 90vh;
   overflow: auto;
   @include mobile {
     padding: 0;
@@ -87,7 +88,6 @@
 }
 .modal-container {
   padding-bottom: 70px;
-  position: relative;
   .cover-image-wrapper {
     max-width: 100%;
     max-height: 100%;

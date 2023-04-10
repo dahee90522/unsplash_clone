@@ -14,12 +14,12 @@ const cx = classNames.bind(style);
 function MainRouter({ location }) {
   const routes = Object.keys(Page).map((pageName) => Page[pageName]);
   const [previousLocation, setPreviousLocation] = useState(location);
-  const [loadingState, setLoadingState] = useState(new LoadingState());
   useEffect(() => {
     if (!(location?.state && location?.state?.modal)) {
       setPreviousLocation(location);
     }
   }, []);
+  console.log(location);
   const isModal = location?.state && location?.state?.modal && previousLocation !== location;
   return (
     <div className={cx('router')}>
